@@ -1,6 +1,6 @@
 # Trabalhando com quasar
 
-[Documentação do Quasar](https://quasar.dev/)
+<https://quasar.dev/>
 
 ## Criando um novo projeto
 
@@ -54,7 +54,7 @@
 `<tag />`
 
 ## Adicionado um formulário
-[Documentação de Campos da Página](https://quasar.dev/vue-components/input)
+<https://quasar.dev/vue-components/input>
 
 Cria o formulário na página
 `<q-form> ... </q-form>`
@@ -83,3 +83,9 @@ Inserindo campos na página
 ```
 
 
+## Criando rotas
+<https://quasar.dev/quasar-cli/lazy-loading#lazy-load-router-pages>
+### Chamando uma outra página através do botão
+```html
+<q-btn label="Ir para" to="/rota" />
+```
