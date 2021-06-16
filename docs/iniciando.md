@@ -22,6 +22,12 @@
 
 
 ## Componente no Vue
+<template>
+<!-- Tags dos elementos que são mostrados no componente-->
+</template>
+<script>
+// Código do Javascript
+</script>
 
 ## Inserindo TAGS
 

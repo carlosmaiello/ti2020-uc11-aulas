@@ -1,5 +1,6 @@
 <template>
   <q-page padding>
+    <q-btn label="Voltar" to="/" class="q-mt-md" />
     <h3>Cadastro de Cliente</h3>
     <q-form class="q-gutter-md">
       <q-slider :min="0" :max="10" v-model="slider" :label-always="true" />     
