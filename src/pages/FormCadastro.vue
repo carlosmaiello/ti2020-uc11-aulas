@@ -2,6 +2,7 @@
   <q-page padding>
     <h3>Cadastro de Cliente</h3>
     <q-form class="q-gutter-md">
+      <q-slider :min="0" :max="10" v-model="slider" :label-always="true" />     
       <div class="row">
         <div class="col">
           <q-input label="Teste" />
@@ -38,5 +39,10 @@
 <script>
 export default {
   // name: 'PageName',
+  data () {
+    return {
+      slider: 3
+    }
+  }
 };
 </script>
