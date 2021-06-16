@@ -22,30 +22,33 @@
 
 
 ## Componente no Vue
+```html
 <template>
 <!-- Tags dos elementos que são mostrados no componente-->
 </template>
 <script>
 // Código do Javascript
 </script>
+```
 
 ## Inserindo TAGS
 
 ### Tag com conteúdo
-
+```js
 <tag>
     <tag1>
     ...
     </tag1>
 </tag>
+```
 
 ### Propriedades
-<pre><code>
+```html
 <tag prop="valor" prop2="valor" prop3="valor">
 </tag>
 
 <tag prop="valor" prop2="valor" prop3="valor" />
-</code></pre>
+```
 
 ### Tag sem conteúdo
 `<tag />`
@@ -57,14 +60,14 @@ Cria o formulário na página
 `<q-form> ... </q-form>`
 
 Inserindo campos na página
-<pre><code>
+```html
 <q-input label="Nome" />
 <q-input label="Data de Nascimento" type="date" />
 <q-input label="E-mail" type="email" />
-</code></pre>
+```
 
 ### Exemplo de formulário
-<pre><code>
+```html
 <q-form class="q-gutter-md">
     <div class="row">
         <div class="col">
@@ -77,6 +80,6 @@ Inserindo campos na página
     <q-input label="E-mail" type="email" />
     <q-btn label="Cadastrar" />
 </q-form>
-</code></pre>
+```
 
 
