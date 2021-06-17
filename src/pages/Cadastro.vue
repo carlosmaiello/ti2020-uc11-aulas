@@ -1,49 +1,48 @@
 <template>
   <q-page padding>
     <q-btn label="Voltar" to="/" class="q-mt-md" />
-    <h3>Cadastro de Cliente</h3>
+    <h4>Cadastro de Cliente</h4>
     <q-form class="q-gutter-md">
-      <q-slider :min="0" :max="10" v-model="slider" :label-always="true" />     
       <div class="row">
         <div class="col">
-          <q-input label="Teste" />
+          <q-input label="Nome" />
         </div>
         <div class="col">
-          <q-input label="Teste" />
+          <q-input label="Sobrenome" />
         </div>
       </div>
-      <q-input label="Teste" />
-      <q-input label="Teste" />
-      <q-input label="Teste" />
-      <q-input label="Teste" />
-      <q-input label="Teste" />
-      <q-input label="Teste" />
-      <q-input label="Teste" />
-      <q-input label="Teste" />
-      <q-input label="Teste" />
-      <q-input label="Teste" />
-      <q-input label="Teste" />
-      <q-checkbox label="Teste" />
+      <q-input label="Email" type="email" />
+      <q-input label="Telefone" type="tel" mask="(##) #####-####" fill-mask="#" />
+      <h6 class="q-mb-none q-mt-xl">Endereço</h6>
+      <q-input label="CEP" mask="#####-###" fill-mask="#" />
+      <q-input label="Logradouro" />
+      <q-input label="Número" />
+      <q-input label="Complemento" />
+      <q-input label="Bairro" />
+      <q-input label="Cidade" />
+      <select-estado label="Estado" v-model="estado" />
+      
+
+      <h6 class="q-mb-none q-mt-xl">Documentos</h6>
+      <q-input label="CPF"  mask="###.###.###-##" fill-mask="#" />
+      <q-input label="RG" mask="##.###.###-#" fill-mask="#" />
+
       <div>
-        <q-radio label="Teste" />
-        <q-radio label="Teste" />
-        <q-radio label="Teste" />
-        <q-radio label="Teste" />
-      </div>
-      <div>
-        <q-btn label="Teste" />
+        <q-btn label="Cadastrar" type="submit" size="lg" color="primary" class="q-my-lg" />
       </div>
     </q-form>
   </q-page>
 </template>
 
 <script>
+import SelectEstado from 'components/SelectEstado';
 export default {
+  components: { SelectEstado },
   // name: 'PageName',
-  data () {
+  data() {
     return {
-      slider: 3
-    }
+      estado: null
+    };
   }
 };
 </script>
