@@ -35,7 +35,7 @@ export default {
   },
   computed: {
     imc() {
-      if (+this.peso == 0 || +this.altura == 0) return 0;
+      if (+this.peso === 0 || +this.altura === 0) return 0;
       else return +this.peso / (+this.altura * +this.altura);
     },
     mensagem() {
