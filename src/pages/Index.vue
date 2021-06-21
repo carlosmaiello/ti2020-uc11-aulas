@@ -1,5 +1,5 @@
 <template>
-  <q-page class="flex flex-center column items-stretch" padding>
+  <q-page class="flex flex-center column items-stretch q-gutter-md" padding>
     <h4>Atividades das Aulas</h4>
     <q-btn label="Cadastro" to="/cadastro" padding="md" color="primary" />
     <q-btn
@@ -7,10 +7,10 @@
       to="/login"
       padding="md"
       color="primary"
-      class="q-my-md"
     />
     <q-btn label="Ir para Soma" to="/soma" padding="md" color="primary" />
     <q-btn label="IMC" to="/imc" padding="md" color="primary" />
+    <q-btn label="Lista" to="/lista" padding="md" color="primary" />
   </q-page>
 </template>
 

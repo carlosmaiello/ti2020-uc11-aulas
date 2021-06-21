@@ -8,7 +8,8 @@ const routes = [
       { path: 'cadastro', component: () => import('src/pages/Cadastro.vue') },
       { path: 'login', component: () => import('pages/Login.vue') },
       { path: 'soma', component: () => import('pages/Soma.vue') },
-      { path: 'imc', component: () => import('pages/Imc.vue') }
+      { path: 'imc', component: () => import('pages/Imc.vue') },
+      { path: 'lista', component: () => import('pages/Lista.vue') }
     ]
   },
 

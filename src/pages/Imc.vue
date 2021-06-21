@@ -17,9 +17,12 @@
         <q-slider v-model="peso" :min="10" :max="250" :step="1" />
       </q-form>
 
-      <h4>Resultado</h4>
-      <p>{{ imc }}</p>
-      <p>{{ mensagem }}</p>
+      <div v-if="imc > 0">
+        <h4>Resultado</h4>
+        <p>{{ imc }}</p>
+        <p>{{ mensagem }}</p>
+      </div>
+
     </div>
   </q-page>
 </template>
@@ -35,7 +38,7 @@ export default {
   },
   computed: {
     imc() {
-      if (+this.peso === 0 || +this.altura === 0) return 0;
+      if (+this.peso === 0 || +this.altura === 0) return 0;      
       else return +this.peso / (+this.altura * +this.altura);
     },
     mensagem() {
