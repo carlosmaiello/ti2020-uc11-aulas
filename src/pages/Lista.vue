@@ -61,7 +61,7 @@ export default {
       var cor = {
         nome: this.nome,
         rgb: this.rgb
-      };
+      };      
 
       this.cores.push(cor);
 

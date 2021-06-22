@@ -12,7 +12,7 @@
         </div>
       </div>
       <q-input label="Email" type="email" />
-      <q-input label="Telefone" type="tel" mask="(##) #####-####" fill-mask="#" />
+      <q-input label="Telefone" type="tel" :mask="celMask" v-model="cel" unmasked-value ref="cel" />
       <h6 class="q-mb-none q-mt-xl">Endereço</h6>
       <q-input label="CEP" mask="#####-###" fill-mask="#" />
       <q-input label="Logradouro" />
@@ -41,8 +41,28 @@ export default {
   // name: 'PageName',
   data() {
     return {
-      estado: null
+      estado: null,
+      cel: ''
     };
+  },
+  watch: {
+    celMask () {
+      let input = this.$refs.cel.$refs.input
+      requestAnimationFrame(() => {
+        input.selectionStart = input.value.length
+      })
+    }
+  },
+  computed: {
+    celMask () {
+      console.log(this.cel, this.cel.length)
+      switch (true) {
+        case this.cel.length <= 8: return '####-#####'
+        case this.cel.length === 9: return '#####-#####'
+        case this.cel.length === 10: return '(##) ####-#####'
+        default: return '(##) #####-####'
+      }
+    }
   }
 };
 </script>
