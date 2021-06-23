@@ -26,7 +26,7 @@
         <q-item-section class="col-2">{{ produto.preco }}</q-item-section>
         <q-item-section class="col-2">{{ produto.qtde }}</q-item-section>
         <q-item-section class="col-2" side>
-          <q-item-label>{{ produto.total | formatarDinheiro }}</q-item-label>
+          <q-item-label>{{ produto.total }}</q-item-label>
         </q-item-section>
       </q-item>
       <q-item>
