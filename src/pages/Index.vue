@@ -11,6 +11,7 @@
     <q-btn label="Ir para Soma" to="/soma" padding="md" color="primary" />
     <q-btn label="IMC" to="/imc" padding="md" color="primary" />
     <q-btn label="Lista" to="/lista" padding="md" color="primary" />
+    <q-btn label="Compras" to="/compras" padding="md" color="primary" />
   </q-page>
 </template>
 

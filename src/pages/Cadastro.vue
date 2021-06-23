@@ -55,7 +55,6 @@ export default {
   },
   computed: {
     celMask () {
-      console.log(this.cel, this.cel.length)
       switch (true) {
         case this.cel.length <= 8: return '####-#####'
         case this.cel.length === 9: return '#####-#####'

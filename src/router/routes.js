@@ -9,7 +9,8 @@ const routes = [
       { path: 'login', component: () => import('pages/Login.vue') },
       { path: 'soma', component: () => import('pages/Soma.vue') },
       { path: 'imc', component: () => import('pages/Imc.vue') },
-      { path: 'lista', component: () => import('pages/Lista.vue') }
+      { path: 'lista', component: () => import('pages/Lista.vue') },
+      { path: 'compras', component: () => import('pages/Compras.vue') },
     ]
   },
 
