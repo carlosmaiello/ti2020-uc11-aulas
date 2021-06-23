@@ -23,7 +23,7 @@
     <q-list separator>
       <q-item v-for="produto in produtos" :key="produto.nome">
         <q-item-section>{{ produto.nome }}</q-item-section>
-        <q-item-section class="col-2">{{ produto.preco  | formatarDinheiro }}</q-item-section>
+        <q-item-section class="col-2">{{ produto.preco }}</q-item-section>
         <q-item-section class="col-2">{{ produto.qtde }}</q-item-section>
         <q-item-section class="col-2" side>
           <q-item-label>{{ produto.total | formatarDinheiro }}</q-item-label>
@@ -34,7 +34,7 @@
         <q-item-section class="col-2"></q-item-section>
         <q-item-section class="col-2">{{ totalQtde }}</q-item-section>
         <q-item-section class="col-2" side>
-          <q-item-label>{{ total | formatarDinheiro }}</q-item-label>
+          <q-item-label>{{ total }}</q-item-label>
         </q-item-section>
       </q-item>
     </q-list>
