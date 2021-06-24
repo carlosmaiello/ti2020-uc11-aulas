@@ -69,6 +69,9 @@
 </template>
 
 <script>
+const reducerTotal = (total, produto) => total + produto.total;
+const reducerQtde = (total, produto) => total + produto.qtde;
+
 export default {
   // name: 'PageName',
   data () {
@@ -103,20 +106,16 @@ export default {
   },
   computed: {
     total () {
-      const reducer = (total, produto) => total + produto.total;
-      return this.produtosNaoComprados.reduce(reducer, 0);
+      return this.produtosNaoComprados.reduce(reducerTotal, 0);
     },
     totalQtde () {
-      const reducer = (total, produto) => total + produto.qtde;
-      return this.produtosNaoComprados.reduce(reducer, 0);
+      return this.produtosNaoComprados.reduce(reducerQtde, 0);
     },
     totalComprados () {
-      const reducer = (total, produto) => total + produto.total;
-      return this.produtosComprados.reduce(reducer, 0);
+      return this.produtosComprados.reduce(reducerTotal, 0);
     },
     totalQtdeComprados () {
-      const reducer = (total, produto) => total + produto.qtde;
-      return this.produtosComprados.reduce(reducer, 0);
+      return this.produtosComprados.reduce(reducerQtde, 0);
     },
     produtosComprados () {
       return this.produtos.filter(produto => produto.comprado)
