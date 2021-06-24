@@ -21,7 +21,10 @@
     </q-form>
     <h4>Produtos</h4>
     <q-list separator>
-      <q-item v-for="produto in produtos" :key="produto.nome">
+      <q-item v-for="produto in produtosNaoComprados" :key="produto.nome">
+       <q-item-section side top>
+          <q-checkbox v-model="produto.comprado" />
+        </q-item-section>        
         <q-item-section>{{ produto.nome }}</q-item-section>
         <q-item-section class="col-2">{{ produto.preco }}</q-item-section>
         <q-item-section class="col-2">{{ produto.qtde }}</q-item-section>
@@ -30,11 +33,35 @@
         </q-item-section>
       </q-item>
       <q-item>
+        <q-item-section></q-item-section>
         <q-item-section>Total</q-item-section>
         <q-item-section class="col-2"></q-item-section>
         <q-item-section class="col-2">{{ totalQtde }}</q-item-section>
         <q-item-section class="col-2" side>
           <q-item-label>{{ total }}</q-item-label>
+        </q-item-section>
+      </q-item>
+    </q-list>
+    <h6>Comprados</h6>
+    <q-list separator>
+      <q-item v-for="produto in produtosComprados" :key="produto.nome">
+       <q-item-section side top>
+          <q-checkbox v-model="produto.comprado" />
+        </q-item-section>        
+        <q-item-section>{{ produto.nome }}</q-item-section>
+        <q-item-section class="col-2">{{ produto.preco }}</q-item-section>
+        <q-item-section class="col-2">{{ produto.qtde }}</q-item-section>
+        <q-item-section class="col-2" side>
+          <q-item-label>{{ produto.total }}</q-item-label>
+        </q-item-section>
+      </q-item>
+      <q-item>
+        <q-item-section></q-item-section>
+        <q-item-section>Total</q-item-section>
+        <q-item-section class="col-2"></q-item-section>
+        <q-item-section class="col-2">{{ totalQtdeComprados }}</q-item-section>
+        <q-item-section class="col-2" side>
+          <q-item-label>{{ totalComprados }}</q-item-label>
         </q-item-section>
       </q-item>
     </q-list>
@@ -51,18 +78,21 @@ export default {
       qtde: 0,
       produtos: [
         {
+          comprado: false,
           nome: "Macarrão",
           preco: 3.55,
           qtde: 2,
           total: 7.1
         },
         {
+          comprado: false,
           nome: "Arroz",
           preco: 15.7,
           qtde: 1,
           total: 15.7
         },
         {
+          comprado: false,
           nome: "Feijão",
           preco: 8.76,
           qtde: 1,
@@ -74,16 +104,31 @@ export default {
   computed: {
     total () {
       const reducer = (total, produto) => total + produto.total;
-      return this.produtos.reduce(reducer, 0);
+      return this.produtosNaoComprados.reduce(reducer, 0);
     },
     totalQtde () {
       const reducer = (total, produto) => total + produto.qtde;
-      return this.produtos.reduce(reducer, 0);
+      return this.produtosNaoComprados.reduce(reducer, 0);
+    },
+    totalComprados () {
+      const reducer = (total, produto) => total + produto.total;
+      return this.produtosComprados.reduce(reducer, 0);
+    },
+    totalQtdeComprados () {
+      const reducer = (total, produto) => total + produto.qtde;
+      return this.produtosComprados.reduce(reducer, 0);
+    },
+    produtosComprados () {
+      return this.produtos.filter(produto => produto.comprado)
+    },
+    produtosNaoComprados() {
+      return this.produtos.filter(produto => !produto.comprado)
     }
   },
   methods: {
     salvar () {
       var produto = {
+        comprado: false,
         nome: this.nome,
         preco: +this.preco,
         qtde: +this.qtde,
