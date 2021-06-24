@@ -126,6 +126,7 @@ export default {
   },
   methods: {
     salvar () {
+      this.$q.loading.show();
       var produto = {
         comprado: false,
         nome: this.nome,
@@ -139,7 +140,7 @@ export default {
       this.$q.notify('Produto adicionado com sucesso!');
 
       this.limpar();
-      //this.$q.loading.show();
+      this.$q.loading.hide();
     },
     limpar () {
       this.nome = '';
